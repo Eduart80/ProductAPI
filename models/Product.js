@@ -13,7 +13,7 @@ const productSchema = new Schema({
   price: {
     type: Number,
     required: [true, "Price is required."],
-    nim: [0.01,  "Price must be greater than 0" ]
+    min: [0.01,  "Price must be greater than 0" ]
   },
   category: {
     type: String,
@@ -23,8 +23,14 @@ const productSchema = new Schema({
     type: Boolean,
     required: [true, "This is required"],
   },
-  tags: []An Array of Strings.
-  createdAt: Date, defaults to ,
+  tags: {
+    type: [String],
+    default: []
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 const Book = mongoose.model('Product', bookSchema)
