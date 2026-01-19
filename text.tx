@@ -29,9 +29,11 @@ DELETE /api/products/:id (Delete a Product)
 Deletes a product by its _id.
 If successful, responds with a success message.
 If no product is found to delete, responds with a 404 status code.
+
 GET /api/products (Read All Products with Advanced Querying)
 
-This is the most complex endpoint. It should retrieve all products but also support the following optional query parameters:
+This is the most complex endpoint. It should retrieve all products but also support the following optional
+ query parameters:
 category: Filter products by a specific category.
 minPrice: Filter products with a price greater than or equal to this value.
 maxPrice: Filter products with a price less than or equal to this value.
@@ -39,6 +41,7 @@ sortBy: Sort results. For example, price_asc for ascending price or price_desc f
 page & limit: For pagination (defaulting to page 1, limit 10).
 Dynamically build the Mongoose query based on which query parameters are provided.
 Respond with an array of the resulting products.
+
 Submission Instructions
 Ensure your application is fully functional and structured as described.
 Test all your endpoints thoroughly using an API client like Postman or Insomnia. Pay special attention to the advanced query endpoint, testing various combinations of filters, sorting, and pagination.
